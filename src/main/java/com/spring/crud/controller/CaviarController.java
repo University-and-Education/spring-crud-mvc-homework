@@ -1,14 +1,13 @@
 package com.spring.crud.controller;
 
 import com.spring.crud.dto.CaviarDTO;
+import com.spring.crud.exception.EntityNotFoundException;
 import com.spring.crud.repository.CaviarRepository;
 import com.spring.crud.service.CaviarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.EntityNotFoundException;
 
 @RestController
 public class CaviarController {

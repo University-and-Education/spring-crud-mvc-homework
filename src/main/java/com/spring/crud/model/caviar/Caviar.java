@@ -5,7 +5,7 @@ import com.spring.crud.model.Seafood;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "caviar")
+@Table(name = "caviar", schema = "public")
 public class Caviar extends Seafood {
 
     @Column(name = "caviar_color")

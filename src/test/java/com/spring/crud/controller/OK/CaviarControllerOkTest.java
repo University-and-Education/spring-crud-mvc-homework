@@ -1,4 +1,4 @@
-package com.spring.crud.controller;
+package com.spring.crud.controller.OK;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.crud.dto.CaviarDTO;
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 @TestPropertySource(locations = "classpath:application.properties")
-public class CaviarControllerTest {
+public class CaviarControllerOkTest {
 
     @Autowired
     private MockMvc mockMvc;

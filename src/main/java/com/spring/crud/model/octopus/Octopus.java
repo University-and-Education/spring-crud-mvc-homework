@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "octopus")
+@Table(name = "octopus", schema = "public")
 public class Octopus extends Seafood {
 
     @Column(name = "peeled")
