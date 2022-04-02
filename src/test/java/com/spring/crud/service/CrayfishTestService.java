@@ -31,4 +31,20 @@ public class CrayfishTestService {
         crayfishDTO.setWeight(320.0);
         return crayfishDTO;
     }
+
+    public CrayfishDTO createCrayfishDTOBadValidation() {
+        CrayfishDTO crayfishDTO = new CrayfishDTO();
+        crayfishDTO.setProductName("");
+        crayfishDTO.setWeight(1.0);
+        crayfishDTO.setCrayfishType(null);
+        return crayfishDTO;
+    }
+
+    public CrayfishDTO createCrayfishDTOInvalidValues() {
+        CrayfishDTO crayfishDTO = new CrayfishDTO();
+        crayfishDTO.setProductName("Дары Великого Копатыча Прямо из села Ивановка Специально для Тебя!!!");
+        crayfishDTO.setWeight(1.0);
+        crayfishDTO.setCrayfishType(null);
+        return crayfishDTO;
+    }
 }

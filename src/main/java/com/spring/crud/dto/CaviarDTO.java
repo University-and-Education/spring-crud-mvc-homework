@@ -3,12 +3,17 @@ package com.spring.crud.dto;
 import com.spring.crud.model.caviar.CaviarColor;
 import com.spring.crud.model.caviar.Fish;
 
+import javax.validation.constraints.NotNull;
+
 public class CaviarDTO extends SeafoodDTO {
 
+    @NotNull
     private CaviarColor caviarColor;
 
+    @NotNull
     private Fish fish;
 
+    @NotNull
     private Boolean artificial;
 
     public CaviarColor getCaviarColor() {

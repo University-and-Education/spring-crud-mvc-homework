@@ -7,6 +7,7 @@ import com.spring.crud.service.OctopusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -36,12 +37,12 @@ public class OctopusController {
     }
 
     @PostMapping("/api/octopus")
-    public ResponseEntity<Long> createOctopus(@RequestBody OctopusDTO octopusDTO) {
+    public ResponseEntity<Long> createOctopus(@Validated @RequestBody OctopusDTO octopusDTO) {
         return new ResponseEntity<>(octopusService.createOctopus(octopusDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/api/octopus/{octopusId}")
-    public ResponseEntity<Long> editOctopus(@PathVariable Long octopusId, @RequestBody OctopusDTO octopusDTO) {
+    public ResponseEntity<Long> editOctopus(@PathVariable Long octopusId, @Validated @RequestBody OctopusDTO octopusDTO) {
         if (!octopusRepository.existsById(octopusId)) {
             throw new EntityNotFoundException("Ошибка! Товар не существует или был удален!");
         }

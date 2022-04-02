@@ -7,6 +7,7 @@ import com.spring.crud.service.CrayfishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -36,12 +37,12 @@ public class CrayfishController {
     }
 
     @PostMapping("/api/crayfish")
-    public ResponseEntity<Long> createCrayfish(@RequestBody CrayfishDTO crayfishDTO) {
+    public ResponseEntity<Long> createCrayfish(@Validated @RequestBody CrayfishDTO crayfishDTO) {
         return new ResponseEntity<>(crayfishService.createCrayfish(crayfishDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/api/crayfish/{crayfishId}")
-    public ResponseEntity<Long> editCrayfish(@PathVariable Long crayfishId, @RequestBody CrayfishDTO crayfishDTO) {
+    public ResponseEntity<Long> editCrayfish(@PathVariable Long crayfishId, @Validated @RequestBody CrayfishDTO crayfishDTO) {
         if (!crayfishRepository.existsById(crayfishId)) {
             throw new EntityNotFoundException("Ошибка! Товар не существует или был удален!");
         }
